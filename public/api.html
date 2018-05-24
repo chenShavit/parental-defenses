@@ -1,1 +1,72 @@
-this is api
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Api</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="conteiner">
+        <img src="assets/remote.png">
+        <h1>Welcom to family TV!</h1>
+        <h2>We have 4 channels for your,Your viewing experience is the must important for us,
+            Please see All Our channels her</h2>
+            <a href="https://parental-defenses.herokuapp.com/getAllChannels">Get all channels(using GET) https://parental-defenses.herokuapp.com/getAllChannels</a>
+            <h2></h2>
+            <div>API respond: 
+                    [{"details":{"content":["news flash","interviews","news"],"number_channel":1},"_id":"5b06758c60b4260b6199a8db","name":"news","broadcast_hour_start":"5am","broadcast_hour_end":"9pm","isBlock":false},{"details":{"content":["learing","comic","funny"],"number_channel":2},"_id":"5b06763260b4260b6199a8fe","name":"kids","broadcast_hour_start":"6am","broadcast_hour_end":"6pm","isBlock":false},{"details":{"content":["learing","comic","funny"],"number_channel":3},"_id":"5b06771860b4260b6199a96e","name":"films","broadcast_hour_start":"1pm","broadcast_hour_end":"1am","isBlock":false},{"details":{"content":["sex","pornography"],"number_channel":99},"_id":"5b06a24760b4260b6199bd3b","name":"porn","broadcast_hour_start":"6pm","broadcast_hour_end":"4am","isBlock":true}]
+            </div>
+
+        <h2>Please choose your channel number</h2>
+        <a herf="https://parental-defenses.herokuapp.com/getChannelByNumber/2">Get channel with number between 1-4 (using POST - number_channel) https://parental-defenses.herokuapp.com/getChannelByNumber/:number</a>
+        <div>API respond:<br>
+                [<br>
+    {<br>
+        "details": {<br>
+            "content": [<br>
+                "learing",<br>
+                "comic",<br>
+                "funny"<br>
+            ],<br>
+            "number_channel": 2<br>
+        },<br>
+        "_id": "5b06763260b4260b6199a8fe",<br>
+        "name": "kids",<br>
+        "broadcast_hour_start": "6am",<br>
+        "broadcast_hour_end": "6pm",<br>
+        "isBlock": false<br>
+    }<br>
+]<br>
+        </div>
+        <h2>Please choose your channel number, if you can see a response the channel is appropriate for kids, if you get in ERROR please add the pass to URL</h2>
+        <a herf="https://parental-defenses.herokuapp.com/getAllowedChannelByNumber/1">Get channel with number between 1-4 (using POST - number_channel) https://parental-defenses.herokuapp.com/getChannelByNumber/:number</a>
+        <div>API respond:<br>
+            {<br>
+                "details": {<br>
+                    "content": [<br>
+                        "news flash",<br>
+                        "interviews",<br>
+                        "news"<br>
+                    ],<br>
+                    "number_channel": 1<br>
+                },<br>
+                "_id": "5b06758c60b4260b6199a8db",<br>
+                "name": "news",<br>
+                "broadcast_hour_start": "5am",<br>
+                "broadcast_hour_end": "9pm",<br>
+                "isBlock": false<br>
+            }<br>
+
+            OR in case a bad channel for kids<br>
+            {<br>
+                "status": "failed",<br>
+                "error": "channel is block. pass is wrong."<br>
+            }<br>
+                pass:1234<br>
+    </div>
+</body>
+
+</html>

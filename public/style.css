@@ -1,4 +1,19 @@
-*{
-    background-color: blue;
-    color: #ffffff;
+
+.conteiner{
+    background-color: #C6DDF0;
+   width: 100%;
+   font-family: 'Montserrat', sans-serif;
+}
+.conteiner a{
+    color:#9F7E69;
+    font-family: 'Montserrat', sans-serif;
+    text-emphasis: none;
+}
+div{
+    color:#482728;
+}
+.conteiner img{
+    float: right;
+    margin-right: 1241px;
+    padding-top: 10px;
 }
